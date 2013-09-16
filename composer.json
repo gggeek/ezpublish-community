@@ -9,15 +9,9 @@
             "homepage": "https://github.com/ezsystems/ezpublish-community/contributors"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/lolautruche/Archive.git"
-        }
-    ],
-    "autoload": {
-        "psr-0": { "": "src/" }
-    },
+
+    "type": "metapackage",
+
     "require": {
         "php": ">=5.3.3",
         "symfony/symfony": "2.3.*",
@@ -52,6 +46,7 @@
         "zetacomponents/signal-slot": "@dev",
         "zetacomponents/system-information": "@dev"
     },
+
     "require-dev": {
         "behat/behat": "2.5.*",
         "behat/symfony2-extension": "*",
@@ -61,42 +56,5 @@
         "behat/mink-selenium-driver": "*",
         "behat/mink-sahi-driver": "*",
         "phpunit/phpunit": "3.7.*"
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-            "eZ\\Bundle\\EzPublishLegacyBundle\\Composer\\ScriptHandler::installAssets",
-            "eZ\\Bundle\\EzPublishCoreBundle\\Composer\\ScriptHandler::dumpAssets",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
-        ],
-        "post-update-cmd": [
-            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-            "eZ\\Bundle\\EzPublishLegacyBundle\\Composer\\ScriptHandler::installAssets",
-            "eZ\\Bundle\\EzPublishCoreBundle\\Composer\\ScriptHandler::dumpAssets",
-            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
-        ]
-    },
-    "config": {
-        "process-timeout": 3000,
-        "bin-dir": "bin"
-    },
-    "extra": {
-        "symfony-app-dir": "ezpublish",
-        "symfony-web-dir": "web",
-        "ezpublish-legacy-dir": "ezpublish_legacy",
-        "_symfony-assets-install_comment_": "One of 'symlink', 'relative' (symlinks) or 'hard'",
-        "symfony-assets-install": "relative",
-        "incenteev-parameters": {
-            "file": "ezpublish/config/parameters.yml"
-        },
-        "branch-alias": {
-            "dev-master": "5.2.x-dev"
-        }
     }
 }
